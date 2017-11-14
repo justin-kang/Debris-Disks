@@ -92,3 +92,29 @@ class Dust:
         def _function(unused):
             return PI * simps(np.multiply(self._q,planck(freq,temp)),freq)
         return _function
+
+    '''
+    in class we talked about radiation pressure and poynting-robertson drag in 
+    terms of ideal blackbodies. however, for previous problems you've already 
+    calculated the actual energy absorption and emission of real particles, 
+    which should allow you to calculate better versions of each force. for 
+    each particle size, calculate the real radiation pressure and poynting-
+    robertson drag at each radius. estimate a characteristic timescale for 
+    dust grains of each size to be removed from the system, assuming they 
+    start at 10 AU or 130 AU.
+    '''
+    '''
+    Fpr = Fsin(theta) = v/c*F = v/c^2*Pin = Q/c^2*L/4(r/a)^2*sqrt(GM/a)
+    '''
+    def poynting_robertson_drag(self):
+        return
+
+    '''
+    Pin = L/4(r/a)^2*Q
+    perfect absorber: Q=1, reflector: Q=2
+    Frp = dp/dt = d/dt(E/c) = 1/c*dE/dt = 1/c*Pin = L/4c(r/a)^2*Q
+    let B = Frp/Fg = L/4c(r/a)^2*Q*a^2/GMm = LQr^2/(4cGMm)
+    Fnet = Frp + Fg = -(1-B)GMm/a^2
+    '''
+    def radiation_pressure(self):
+        return
