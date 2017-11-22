@@ -65,7 +65,7 @@ if SHOW[2]:
         lumi = dust[0].spectrum(distance)(DUST_FREQ)
         lumi = lumi[:round(len(lumi)/2)]
         plt.loglog(freq, lumi)
-    plt.xlabel('Wavelength (µm)')
+    plt.xlabel('Frequency (Hz)')
     plt.ylabel('Flux (Jy)')
     plt.legend(('0.1 Micron','1.0 Micron','10.0 Micron','1000 Micron'),
         loc='best',prop={'size':10})
@@ -75,7 +75,7 @@ if SHOW[2]:
         lumi = dust[0].spectrum(distance)(DUST_FREQ)
         lumi = lumi[:round(len(lumi)/2)]
         plt.loglog(freq, lumi)
-    plt.xlabel('Wavelength (µm)')
+    plt.xlabel('Frequency (Hz)')
     plt.ylabel('Flux (Jy)')
     plt.legend(('0.1 Micron','1.0 Micron','10.0 Micron','1000 Micron'),
         loc='best',prop={'size':10})
@@ -84,7 +84,7 @@ if SHOW[2]:
 # PART 4
 if SHOW[3]:
     print('\nPART 4')
-    ref_peaks = np.array([10,10,10,10,10**(-.5),10**(-.5),10**(-.5),10**(-.5)])
+    ref_peaks = np.array([10**(-.5),10**(-.5),10**(-.5),10**(-.5),10,10,10,10])
     mass = []
     spectra = []
     for dust in dusts:
