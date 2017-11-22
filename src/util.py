@@ -28,15 +28,6 @@ def spectrum(temp):
         return PI * planck(freq,temp)
     return _function
 
-# converts floats to integers if they're integers
-def ftoi(value):
-    return int(value) if value.is_integer() else value
-
-# returns 'num' with 'n' significant figures
-def sig_figs(num, n=1):
-    numstr = ("{0:.%ie}" % (n-1)).format(num)
-    return float(numstr)
-
 # binary search
 def bin_search(func, l, r, value):
     mid = (l + r) / 2
@@ -50,3 +41,17 @@ def bin_search(func, l, r, value):
         return bin_search(func,l,mid,value)
     else:
         return bin_search(func,mid,r,value)
+
+# converts floats to integers if they're integers
+def ftoi(value):
+    return int(value) if value.is_integer() else value
+
+# returns 'num' with 'n' significant figures
+def sig_figs(num, n=4):
+    numstr = ("{0:.%ie}" % (n-1)).format(num)
+    return float(numstr)
+
+# converts 'num' to a string in scientific notation with 'n' sig figs
+def sci_not(num, n=4):
+    numstr = '%.' + str(n) + 'g'
+    return numstr % num
